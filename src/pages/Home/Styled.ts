@@ -33,8 +33,24 @@ export const Main = styled.main`
             img{
                 width: 70%;
             }
+        }  
+    }
+    @media(max-width: 1100px) {
+        height: auto;
+        article{
+            flex-direction: column;
+            align-items: center;
+            flex-wrap: wrap;
         }
-        
+        figure{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }img{
+                width: 50%;
+        }
     }
 `
 
@@ -62,14 +78,27 @@ export const Description = styled.div`
         text-align: center;
         align-items: center;
         justify-content: center;
+        
         h1{
-            font-size:1.5rem;
-            line-height: 1.5rem;
+            font-size:1.875rem;
+            line-height: 2rem;
         }
         p{
             font-size: 0.875rem;
+            line-height: 1rem;
             margin-bottom: 10px;
         }
+    }@media(max-width: 1100px) {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        line-height: 2rem;
+       
+        p{
+            margin-bottom: 10px;
+        }
+
+
     }
 
 `
@@ -91,11 +120,12 @@ export const ProductDescription = styled.div`
         
     }
     @media(max-width: 768px){
-        margin-top: 25px;
         gap: 1rem;
         height: 100px;
+        
         div{
             flex-direction: row;
+            align-items: center;
             gap: 1rem;
             width: 100%;
             p{
@@ -107,6 +137,10 @@ export const ProductDescription = styled.div`
                 height: 100%;
             }
         }
+    }@media(max-width: 1100px) {
+        align-items: center;
+        justify-content: center;
+
     }
 `
 
