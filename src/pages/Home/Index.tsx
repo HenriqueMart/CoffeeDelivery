@@ -1,10 +1,11 @@
 import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react';
 import banner_coffee from '../../assets/home/Imagem.svg';
-import { Description, IconeDescrition, Main, ProductDescription } from './Styled';
+import { Description, IconeDescrition, Main, ProductDescription, SectionCaffee } from './Styled';
 
 
 export function Home(){
     return(
+    <>
         <Main>
             <article>
                 <div>
@@ -28,5 +29,46 @@ export function Home(){
                 </figure>
             </article>
         </Main>
+        <SectionCaffee>
+            <div>
+                <div>
+                    <h1>Nossos Cafés</h1>
+                </div>
+                <div>
+                    <div>
+                        <div>
+                            <figure>
+                                <img src="" />
+                            </figure>
+                            <p>TRADICIONAL</p>
+                            <h2>
+                                Expresso Tradicional
+                            </h2>
+                            <p>
+                                O tradicional Café feito com água quente e grãos moídos
+                            </p>
+                        </div>
+                        <div>
+                            <div>
+                                <p>
+                                    R$ <span>9,90</span>
+                                </p>
+                            </div>
+                            <div>
+                                <p>-</p>
+                                <input type="number" name="" id="" />
+                                <p>+</p>
+                            </div>
+                            <div>
+                                <ShoppingCart size={32}/>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </SectionCaffee>
+    </>
     )
 }

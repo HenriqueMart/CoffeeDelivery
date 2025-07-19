@@ -1,13 +1,11 @@
 import styled from "styled-components";
 
+//Main
 export const Main = styled.main`
-    background-color: ${props => props.theme.background};
-    height: 544px;
     font-family: 'baloo 2', sans-serif; 
 
     article{
-        margin: 50px 100px;
-        padding: 25px;
+        padding: 25px 0;
         display: flex; 
         gap: 2rem;
         
@@ -19,8 +17,7 @@ export const Main = styled.main`
     }
     @media(max-width: 768px) {
         article{
-            margin: 20px;
-            padding: 10px;
+            padding: 10px 0px;
             flex-direction: column;
             align-items: center;
             flex-wrap: wrap;
@@ -80,12 +77,11 @@ export const Description = styled.div`
         justify-content: center;
         
         h1{
-            font-size:1.875rem;
+            font-size:1.5rem;
             line-height: 2rem;
         }
         p{
-            font-size: 0.875rem;
-            line-height: 1rem;
+            line-height: 1.5rem;
             margin-bottom: 10px;
         }
     }@media(max-width: 1100px) {
@@ -93,7 +89,7 @@ export const Description = styled.div`
         align-items: center;
         justify-content: center;
         line-height: 2rem;
-       
+
         p{
             margin-bottom: 10px;
         }
@@ -108,39 +104,44 @@ export const ProductDescription = styled.div`
     align-items: center;
     justify-content: left;
     height: 40%;
-    gap: 2rem;
+    gap: 1rem;
     div{
         display: flex;
         flex-direction: column;
         gap: 1rem;
         p{
-            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.75rem;
             color: ${props => props.theme.base_subtitle};
         }
         
     }
     @media(max-width: 768px){
         gap: 1rem;
-        height: 100px;
-        
+       
         div{
             flex-direction: row;
             align-items: center;
             gap: 1rem;
-            width: 100%;
             p{
+                height: 100%;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
                 text-align: center;
-                height: 100%;
             }
         }
     }@media(max-width: 1100px) {
         align-items: center;
         justify-content: center;
-
+        div{
+            p{
+                
+            }
+        }
     }
 `
 
@@ -166,4 +167,14 @@ export const IconeDescrition = styled.span<IconeProps>`
     }
 `
 
+
+//Main
+export const SectionCaffee = styled.section`
+    height: auto;
+    background-color: aqua;
+    div{
+    
+    }
+
+`
 
