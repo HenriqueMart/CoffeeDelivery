@@ -1,6 +1,7 @@
 import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react';
 import banner_coffee from '../../assets/home/Imagem.svg';
-import { Description, IconeDescrition, Main, ProductDescription, SectionCaffee } from './Styled';
+import { CardsWrapper, Description, IconeDescrition, Main, ProductDescription, SectionCoffee } from './Styled';
+import { Card } from '../../Components/card/Index';
 
 
 export function Home(){
@@ -29,46 +30,23 @@ export function Home(){
                 </figure>
             </article>
         </Main>
-        <SectionCaffee>
+        <SectionCoffee>
+            
             <div>
-                <div>
-                    <h1>Nossos Cafés</h1>
-                </div>
-                <div>
-                    <div>
-                        <div>
-                            <figure>
-                                <img src="" />
-                            </figure>
-                            <p>TRADICIONAL</p>
-                            <h2>
-                                Expresso Tradicional
-                            </h2>
-                            <p>
-                                O tradicional Café feito com água quente e grãos moídos
-                            </p>
-                        </div>
-                        <div>
-                            <div>
-                                <p>
-                                    R$ <span>9,90</span>
-                                </p>
-                            </div>
-                            <div>
-                                <p>-</p>
-                                <input type="number" name="" id="" />
-                                <p>+</p>
-                            </div>
-                            <div>
-                                <ShoppingCart size={32}/>
-                            </div>
-                            
-                        </div>
-                        
-                    </div>
-                </div>
+                <h1>Nossos Cafés</h1>
             </div>
-        </SectionCaffee>
+            <CardsWrapper>
+                
+                <Card/>   
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+                
+            </CardsWrapper>
+            
+        </SectionCoffee>
     </>
     )
 }

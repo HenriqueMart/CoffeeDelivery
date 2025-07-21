@@ -169,12 +169,33 @@ export const IconeDescrition = styled.span<IconeProps>`
 
 
 //Main
-export const SectionCaffee = styled.section`
+export const SectionCoffee = styled.section`
     height: auto;
-    background-color: aqua;
-    div{
-    
+    width: 100%;
+   background-color: aqua;
+    div{ 
+            
+            h1{
+                font-family: 'baloo 2', sans-serif; 
+                color: ${props => props.theme.base_title};
+                font-size: 1.5rem;    
+            }
+        
     }
+`
 
+export const SectionCoffeeCard =  styled.div`
+    width: 100%;
+    
+  
+
+`
+
+export const CardsWrapper = styled.div`
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    width: 100%;
+    box-sizing: border-box;
 `
 
