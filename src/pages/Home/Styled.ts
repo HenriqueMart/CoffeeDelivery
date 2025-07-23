@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+
+
 //Main
 export const Main = styled.main`
     font-family: 'baloo 2', sans-serif; 
@@ -167,35 +169,26 @@ export const IconeDescrition = styled.span<IconeProps>`
     }
 `
 
-
 //Main
 export const SectionCoffee = styled.section`
-    height: auto;
     width: 100%;
-   background-color: aqua;
-    div{ 
-            
+    padding: 2rem 0;
+    height: auto;
+    div{  
             h1{
                 font-family: 'baloo 2', sans-serif; 
                 color: ${props => props.theme.base_title};
-                font-size: 1.5rem;    
+                font-size: 1.875rem;  
+                font-weight: bolder;
+                margin-bottom : 2rem;
             }
-        
     }
-`
-
-export const SectionCoffeeCard =  styled.div`
-    width: 100%;
-    
-  
-
 `
 
 export const CardsWrapper = styled.div`
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
     width: 100%;
-    box-sizing: border-box;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 `
 

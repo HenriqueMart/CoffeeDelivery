@@ -4,7 +4,17 @@ import { CardsWrapper, Description, IconeDescrition, Main, ProductDescription, S
 import { Card } from '../../Components/card/Index';
 
 
+
+
+    
+
+
+
+
 export function Home(){
+
+    
+
     return(
     <>
         <Main>

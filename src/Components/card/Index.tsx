@@ -1,6 +1,6 @@
-import { ShoppingCart } from "phosphor-react";
+import { Minus, Plus, ShoppingCart } from "phosphor-react";
 import imgCoffee_ExpressoTradicional from '../../assets/cardCoffee/ExpressoTradicional.svg';
-import { CardContainer } from "./Style";
+import { AddCard, BuyUnidade, CardContainer, CoffeeDescription, Footer, Header, Preco, TagDescrition } from "./Style";
 
 
 
@@ -9,37 +9,49 @@ export function Card(){
          
         <CardContainer>
             <div>
-
-            
-                <header>
+                <Header>
                     <figure>
                         <img src={imgCoffee_ExpressoTradicional} alt="Imagens do Café Expresso Tradicional"/>
                     </figure>
-                    <p>TRADICIONAL</p>
-                    <h2>
-                        Expresso Tradicional
-                    </h2>
-                    <p>
-                        O tradicional Café feito com água quente e grãos moídos
-                    </p>
-                </header>
-                <footer>
-
-                    <div>
+                        <TagDescrition>
+                            <p>TRADICIONAL</p>
+                        </TagDescrition>
+                    <CoffeeDescription>
+                        <h2>
+                            Expresso Tradicional
+                        </h2>
                         <p>
-                            R$ <span>9,90</span>
+                            O tradicional Café feito com água quente e grãos moídos
                         </p>
-                    </div>
+                    </CoffeeDescription>
+                </Header>
+                <Footer>
+                    <Preco>
+                        <p>
+                            R$<span>9,90</span>
+                        </p>
+                    </Preco>
                     <div>
-                        <p>-</p>
-                        <input type="number" name="" id="" />
-                        <p>+</p>
+                        <BuyUnidade>
+                            <Minus size={12} />
+                            <p>
+                                1
+                            </p>
+                            <Plus size={12} />
+                        </BuyUnidade>
+                        <AddCard>
+                            <ShoppingCart size={20} weight="fill"/>
+                        </AddCard>
                     </div>
-                    <div>
-                        <ShoppingCart size={32}/>
-                    </div>
+                    
+                        
+                        
+                 
+
+                        
+   
                                 
-                </footer>
+                </Footer>
             </div>
         </CardContainer>
 
