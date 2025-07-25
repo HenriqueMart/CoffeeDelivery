@@ -2,17 +2,14 @@ import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react';
 import banner_coffee from '../../assets/home/Imagem.svg';
 import { CardsWrapper, Description, IconeDescrition, Main, ProductDescription, SectionCoffee } from './Styled';
 import { Card } from '../../Components/card/Index';
-
-
-
-
-    
-
-
-
+import { useContext } from 'react';
+import { CoffesContext } from '../../context/CoffeesContext';
 
 export function Home(){
+    const dados = useContext(CoffesContext);
 
+    if (!dados) return <p>Carregando...</p>
+    
     
 
     return(
@@ -47,13 +44,12 @@ export function Home(){
             </div>
             <CardsWrapper>
                 
-                <Card/>   
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                
+                {dados.map((coffes) => {
+                    return(
+                        <Card key={coffes.id} content={coffes.content}/>
+                    )
+                })} 
+
             </CardsWrapper>
             
         </SectionCoffee>

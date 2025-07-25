@@ -173,6 +173,7 @@ export const IconeDescrition = styled.span<IconeProps>`
 export const SectionCoffee = styled.section`
     width: 100%;
     padding: 2rem 0;
+    margin-bottom: 100px;
     height: auto;
     div{  
             h1{
@@ -180,7 +181,7 @@ export const SectionCoffee = styled.section`
                 color: ${props => props.theme.base_title};
                 font-size: 1.875rem;  
                 font-weight: bolder;
-                margin-bottom : 2rem;
+                margin-bottom : 75px;
             }
     }
 `
