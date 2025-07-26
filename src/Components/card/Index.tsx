@@ -27,9 +27,11 @@ export function Card({content}: CardProps){
                     <figure>
                         <img src={content.photo} alt="Imagens do Café Expresso Tradicional"/>
                     </figure>
-                        <TagDescrition>
-                            <p>{content.tag}</p>
-                        </TagDescrition>
+                    <TagDescrition> 
+                            {content.tag.map((tag) => {
+                                return <p>{tag}</p>
+                            })}
+                    </TagDescrition>
                     <CoffeeDescription>
                         <h2>
                             {content.title}
@@ -42,7 +44,7 @@ export function Card({content}: CardProps){
                 <Footer>
                     <Preco>
                         <p>
-                            R$<span>{content.valor}</span>
+                            R$<span>{content.valor.toFixed(2)}</span>
                         </p>
                     </Preco>
                     <div>

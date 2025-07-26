@@ -1,18 +1,10 @@
 import styled from "styled-components";
-import type { BaseType } from "typescript";
 
 
 export const CardContainer = styled.section`
     background-color: ${props => props.theme.base_card};
     padding: 0 1rem;
     border-radius: 0 25px 0 25px;
-   
-    div{
-        
-        display: flex;
-        flex-direction: column;
-    }
-    
 `
 
 export const Header = styled.header`   
@@ -49,11 +41,15 @@ export const CoffeeDescription = styled.div`
 
 
 export const TagDescrition = styled.div`
-        margin: 0.875rem 0;
+        width: 100%; 
         display: flex;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
+        gap: 5px;
+        margin: 0.875rem 0;
         p{
+            max-width: fit-content; //Ajustando dependendo do tamanho do texto
             padding: 2px 10px;
             border-radius: 20px;
             font-family: 'Baloo 2', sans-serif;
@@ -61,7 +57,7 @@ export const TagDescrition = styled.div`
             color:  ${props => props.theme.yellow_dark};
             font-size: 0.7rem;
             font-weight: bolder;
-            
+            white-space: nowrap;
         }
 
 `
