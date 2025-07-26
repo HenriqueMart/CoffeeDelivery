@@ -2,6 +2,9 @@ import styled from "styled-components";
 
 
 export const HeaderStyle = styled.header`
+    position: sticky; //Fixando o Header fixo na tela
+    top: 0; //Topo da tela aonde o header firacá fixado
+    background-color: ${props => props.theme.background};
     display: flex;
     flex-direction: row;
     justify-content: space-between;
