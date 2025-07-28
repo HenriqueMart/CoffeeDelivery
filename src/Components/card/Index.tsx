@@ -43,9 +43,7 @@ export function Card({content}: CardProps){
                 </Header>
                 <Footer>
                     <Preco>
-                        <p>
-                            R$<span>{content.valor.toFixed(2)}</span>
-                        </p>
+                        
                     </Preco>
                     <div>
                         <BuyUnidade>
