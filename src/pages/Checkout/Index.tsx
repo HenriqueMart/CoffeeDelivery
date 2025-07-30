@@ -1,11 +1,23 @@
-import { Bank, CreditCard, CurrencyDollar, Minus, Money, Plus, Trash } from "phosphor-react";
+import { Bank, CreditCard, CurrencyDollar, MapPinLine, Minus, Money, Plus, Trash } from "phosphor-react";
+import { AddressBox, MainContainer } from "./Styled";
 
 export function Checkout(){
     return (
-        <main>
+        <MainContainer>
             <article>
                 <h1>Complete seu pedido</h1>
-                <div>
+                <AddressBox>
+                    <div>
+                        <span>
+                            <MapPinLine size={28} />
+                        </span>
+                        <div>
+                            <h1>Endereço de Entrega</h1> 
+                            <p>Informe o endereço onde deseja receber seu pedido</p>
+                       </div>
+                       
+                    </div>
+                    
                     <form action="">
                         <input type="number" name="CEP" id="CEP" placeholder="CEP"/>
                         <input type="text" name="" id="" placeholder="Rua"/>
@@ -15,7 +27,7 @@ export function Checkout(){
                         <input type="text" placeholder="Cidade" />
                         <input type="text" placeholder="UF"/>
                     </form>
-                </div>
+                </AddressBox>
                 <div>
                     <CurrencyDollar size={32} />
                     <h2>Pagamento</h2>
@@ -37,10 +49,13 @@ export function Checkout(){
                 </div>
             </article>
             <aside>
-                <h1>Cafés Selecionados</h1>
                 <article>
+                    <h1>Cafés Selecionados</h1>
                     <div>
-                        <img src="" alt="" />
+                        
+                         <figure>
+                            <img src="" alt="" />
+                         </figure>
                         <div>
                             <p>Expresso Tradicional</p>
                             <div>
@@ -74,6 +89,6 @@ export function Checkout(){
                     </div>
                 </article>
             </aside>
-        </main>
+        </MainContainer>
     )
 }

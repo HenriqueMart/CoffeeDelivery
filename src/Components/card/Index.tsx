@@ -1,6 +1,6 @@
 import { Minus, Plus, ShoppingCart } from "phosphor-react";
 import { AddCard, BuyUnidade, CardContainer, CoffeeDescription, Footer, Header, Preco, TagDescrition } from "./Style";
-import { useEffect, useState } from "react";
+
 
 type Content = {
     photo: string
@@ -15,10 +15,7 @@ type CardProps = {
 }
 
 export function Card({content}: CardProps){
-    const [unidade, setUnidade] = useState(1);
 
-  
-    
     return(
          
         <CardContainer>
@@ -43,7 +40,9 @@ export function Card({content}: CardProps){
                 </Header>
                 <Footer>
                     <Preco>
-                        
+                        <p>
+                                R$<span>{content.valor.toFixed(2)}</span>
+                        </p>
                     </Preco>
                     <div>
                         <BuyUnidade>
