@@ -1,5 +1,5 @@
 import { Bank, CreditCard, CurrencyDollar, MapPinLine, Money} from "phosphor-react";
-import { AddressBox, AsideCofferAll, BaseBoxTitle, CardPay, Form, MainContainer, PaymentType} from "./Styled.ts";
+import { AddressBox, AllSelectPrice, AsideCofferAll, BaseBoxTitle, CardPay, Form, MainContainer, PaymentType} from "./Styled.ts";
 import { CardCoffeeSelection } from "./Components/CardCoffeSelect/Index.tsx";
 
 
@@ -11,7 +11,7 @@ export function Checkout(){
                 <AddressBox>
                     <BaseBoxTitle>
                         <span>
-                            <MapPinLine size={28} />
+                            <MapPinLine size={20} />
                         </span>
                         <div>
                             <h2>Endereço de Entrega</h2> 
@@ -38,6 +38,7 @@ export function Checkout(){
                         </label>
                     </Form>
                 </AddressBox>
+
                 <PaymentType>
                     <BaseBoxTitle>
                         <span>
@@ -71,21 +72,36 @@ export function Checkout(){
                 </PaymentType>
             </article>
             <aside>
-                <AsideCofferAll>
+                <article>
                     <h1>Cafés Selecionados</h1>
-                    <div>
+                    <AsideCofferAll>
+                        
                         <CardCoffeeSelection/>
-                        <p>Total de itens</p>
-                        <p>9.99</p>
-                        <p>entrega</p>
-                        <p>3.00</p>
-                        <h2>Total</h2>
-                        <h2>12.00</h2>
-                        <button>
-                            Confirmar pedido
-                        </button>
-                    </div>
-                </AsideCofferAll>
+                        <CardCoffeeSelection/>
+                        
+                        <AllSelectPrice>
+                            <div>
+                                <p>Total de itens</p>
+                                <p><span>R$</span>9.99</p>
+                            </div>
+                            <div>
+                                <p>Entrega</p>
+                                <p><span>R$</span>3.00</p>
+                            </div>
+                            <div>
+                                <h2>Total</h2>
+                                <h2><span>R$</span>12.00</h2>
+                            </div>
+
+                            <button rel="#">
+                                Confirmar pedido
+                            </button>
+      
+                            
+                        </AllSelectPrice>
+                    </AsideCofferAll>
+                    
+                </article>
             </aside>
         </MainContainer>
     )
