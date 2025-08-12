@@ -169,30 +169,35 @@ export const AllSelectPrice = styled.div`
    div{
     display: flex;
     justify-content: space-between;
-    
+
     p{
         font-family: 'roboto', sans-serif;
         font-size: 1rem;
     }
     span{
             margin-right: 5px;
-            
-    }
-   }
-   button{
-        width: 100%;
-        padding: 10px;
-        border-radius: 10px;
-        background-color: ${props => props.theme.yellow};
-        color: ${props => props.theme.while};
-        font-size: 1rem;
-        text-transform: uppercase;
-        font-weight: 500;
-        border: 0 solid black;
-        :hover{
-            background-color: ${props => props.theme.yellow_dark};
         }
     }
-
+    :last-child{
+        a{
+            width: 100%;
+            button{
+                background-color: ${props => props.theme.yellow};
+                width: 100%;
+                font-weight: 500;
+                padding: 10px;
+                border-radius: 10px;
+                border: 0 solid black;
+                cursor: pointer;
+                transition: 0.6s;
+                color: ${props => props.theme.while};
+                text-transform: uppercase;
+                font-size: 1rem;
+            }
+            :hover{
+                background-color: ${props => props.theme.yellow_dark};
+            }
+        }
+    }
 
 `

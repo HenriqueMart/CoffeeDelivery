@@ -1,6 +1,7 @@
 import { Bank, CreditCard, CurrencyDollar, MapPinLine, Money} from "phosphor-react";
 import { AddressBox, AllSelectPrice, AsideCofferAll, BaseBoxTitle, CardPay, Form, MainContainer, PaymentType} from "./Styled.ts";
 import { CardCoffeeSelection } from "./Components/CardCoffeSelect/Index.tsx";
+import { NavLink } from "react-router-dom";
 
 
 export function Checkout(){
@@ -92,10 +93,17 @@ export function Checkout(){
                                 <h2>Total</h2>
                                 <h2><span>R$</span>12.00</h2>
                             </div>
-
-                            <button rel="#">
-                                Confirmar pedido
-                            </button>
+                            <div>
+                                <NavLink to="/Confirm">
+                                    <button>
+                                            Confirmar Compra
+                                    </button>
+                                </NavLink>
+                                
+                            </div>
+                            
+                            
+                            
       
                             
                         </AllSelectPrice>
