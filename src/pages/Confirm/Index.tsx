@@ -1,6 +1,6 @@
 import { CurrencyDollar, MapPin, Timer } from "phosphor-react";
 import transitionImagen from "../../assets/ConfirmPage/Illustration.svg"
-import { MainContainer, TitleConfirm } from "./style";
+import { Ico, InformatioAddress, MainContainer, TitleConfirm } from "./style";
 
 export function Confirm(){
 
@@ -13,29 +13,35 @@ export function Confirm(){
                         <h1>Uhu! Pedido Confirmado</h1>
                         <p>Agora é só aguardar que logo o café chegará até você</p>
                     </TitleConfirm>
-                    <div>
+                    <InformatioAddress>
                         <div>
-                            <span>
-                                <MapPin size={32} weight="fill" />
-                            </span>
-                            <p>Entrega em <span>Rua João Martinelli, 102</span></p>
-                            <p>Ferrapos - Porto Alegre, RS</p>
+                            <Ico>
+                                <MapPin size={15} weight="fill" />
+                            </Ico>
+                            <div>
+                                <p>Entrega em <span>Rua João Martinelli, 102</span></p>
+                                <p>Ferrapos - Porto Alegre, RS</p>
+                            </div>
                         </div>
                         <div>
-                            <span>
-                                <Timer size={32} weight="fill" />
-                            </span>
-                            <p>Previsão de Entrega</p>
-                            <p>20 min - 30 min</p>
+                            <Ico>
+                                <Timer size={15} weight="fill" />
+                            </Ico>
+                            <div>
+                                <p>Previsão de Entrega</p>
+                                <p>20 min - 30 min</p>
+                            </div>
                         </div>
                         <div>
-                            <span>
-                                <CurrencyDollar size={32} />
-                            </span>
-                            <p>Pagamento na entrega</p>
-                            <p><span>Cartão de Crédito</span></p>
+                            <Ico>
+                                <CurrencyDollar size={15} />
+                            </Ico>
+                            <div>
+                                <p>Pagamento na entrega</p>
+                                <p><span>Cartão de Crédito</span></p>
+                            </div>
                         </div>
-                    </div>
+                    </InformatioAddress>
                 </article>
                 <aside>
                     <figure>
