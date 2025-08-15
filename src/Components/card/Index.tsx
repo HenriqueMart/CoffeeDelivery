@@ -1,9 +1,10 @@
 import { Minus, Plus, ShoppingCart } from "phosphor-react";
 import { AddCard, BuyUnidade, CardContainer, CoffeeDescription, Footer, Header, Preco, TagDescrition } from "./Style";
-
+import { useState, useContext } from "react";
+import { CartContext } from "../../context/CoffeesContext";
 
 type Content = {
-    photo: string
+    photo: string;
     title: string;
     tag: string[];
     subtitle: string;
@@ -11,10 +12,34 @@ type Content = {
 }
 
 type CardProps = {
+    id: number;
     content: Content;
 }
 
-export function Card({content}: CardProps){
+export function Card({id, content}: CardProps){
+    const[quantity, setQuantity] = useState(1);
+
+    const {addToCart} = useContext(CartContext);
+
+    function handleMoreUnity(){
+        setQuantity(prevQuantity => prevQuantity + 1);
+        
+    }
+
+    const handleAddToCart = () => {
+        addToCart(id, quantity);
+        //console.log("Produto adicionado ao carrinho:", {id, quantity})
+    }
+    
+    function handleLessUnity(){
+        setQuantity(prevQuantity => {
+            if(prevQuantity > 1){
+                return prevQuantity -1;
+            }
+            return 1;
+        });
+        
+    }
 
     return(
          
@@ -46,14 +71,14 @@ export function Card({content}: CardProps){
                     </Preco>
                     <div>
                         <BuyUnidade>
-                            <Minus size={12}/>
+                            <Minus onClick={handleLessUnity} size={12}/>
                             <p>
-                                1
+                                {quantity}
                             </p>
-                            <Plus size={12} />
+                            <Plus onClick={handleMoreUnity} size={12} />
                         </BuyUnidade>
                         <AddCard>
-                            <ShoppingCart size={20} weight="fill"/>
+                            <ShoppingCart onClick={handleAddToCart}  size={20} weight="fill"/>
                         </AddCard>
                     </div>      
                 </Footer>

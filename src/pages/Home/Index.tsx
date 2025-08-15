@@ -46,7 +46,7 @@ export function Home(){
                 
                 {dados.map((coffes) => {
                     return(
-                        <Card key={coffes.id} content={coffes.content}/>
+                        <Card key={coffes.id} id={coffes.id} content={coffes.content}/>
                     )
                 })} 
 
