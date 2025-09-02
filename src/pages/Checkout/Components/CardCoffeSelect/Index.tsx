@@ -1,27 +1,47 @@
 import { Minus, Plus, Trash } from "phosphor-react";
-import imgTeste from '../../../../assets/photoCardCoffees/CafeComLeite.svg'
 import { ActionCardSelection, CardSelect, InformationCard, NamePrice} from "./Style";
 
-export function CardCoffeeSelection(){
+type Content = {
+    photo: string;
+    title: string;
+    tag: string[];
+    subtitle: string;
+    valor: number;
+}
+
+
+type CardSelection = {
+    id: number;
+    content: Content;
+    quantity: number;
+    handleDeleteCoffee: (id: number) => void;
+}
+
+export function CardCoffeeSelection({id, quantity, content, handleDeleteCoffee}: CardSelection){
+
+    const deleteCoffee = () => {
+        handleDeleteCoffee(id);
+    }
+
     return(   
-             <CardSelect>
+             <CardSelect key={id}>
                 <figure>
-                    <img src={imgTeste}/>
+                    <img src={content.photo} alt="Imagens do Café"/>
                 </figure>
                 <InformationCard>
                         <NamePrice>
-                            <p>Expresso Tradicional</p>
-                            <h3>R$<span>9,90</span></h3>
+                            <p>{content.title}</p>
+                            <h3>R$<span>{content.valor.toFixed(2)}</span></h3>
                         </NamePrice>
                         <ActionCardSelection>
                             <div>
                                 <Minus size={20}/>
                                 <p>
-                                1
+                                {quantity}
                                 </p>
                                 <Plus size={20} />
                             </div>
-                            <div>
+                            <div onClick={deleteCoffee}>
                    
                                 <Trash size={20} />
 
