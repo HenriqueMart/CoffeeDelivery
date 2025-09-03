@@ -14,13 +14,12 @@ type CardSelection = {
     content: Content;
     quantity: number;
     handleDeleteCoffee: (id: number) => void;
+    handleImplementsCoffee: (id: number) => void;
+    handleDescrementsCoffee: (id: number) => void;
 }
 
-export function CardCoffeeSelection({id, quantity, content, handleDeleteCoffee}: CardSelection){
-
-    function deleteCoffee() {
-        handleDeleteCoffee(id);
-    }
+export function CardCoffeeSelection({id, quantity, content, handleDeleteCoffee, handleImplementsCoffee, handleDescrementsCoffee}: CardSelection){
+    
 
     return(   
              <CardSelect key={id}>
@@ -34,13 +33,13 @@ export function CardCoffeeSelection({id, quantity, content, handleDeleteCoffee}:
                         </NamePrice>
                         <ActionCardSelection>
                             <div>
-                                <Minus size={20}/>
+                                <Minus size={20} onClick={() => handleDescrementsCoffee(id)}/>
                                 <p>
                                 {quantity}
                                 </p>
-                                <Plus size={20} />
+                                <Plus size={20} onClick={() => handleImplementsCoffee(id)}/>
                             </div>
-                            <div onClick={deleteCoffee}>
+                            <div onClick={() => handleDeleteCoffee(id)}>
                    
                                 <Trash size={20} />
 

@@ -48,6 +48,7 @@ export const ActionCardSelection = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
+        cursor: pointer;
         padding: 5px;
         gap: 5px;
         border-radius: 10px;

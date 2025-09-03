@@ -34,6 +34,21 @@ export function Checkout(){
         allPriceBuy()
     }
 
+    function handleImplementsCoffee(id: number){
+        setCart((prevCart) => prevCart.map((item) => 
+            item.id === id ? {...item, quantity: item.quantity + 1} : item
+        )
+    );
+    }
+
+    function handleDescrementsCoffee(id: number){
+        setCart((prevCart) => prevCart.map((item) =>
+            
+                item.id === id? (item.quantity > 1 ? {...item, quantity: item.quantity - 1}: item): item
+        )
+    )
+    }
+
     return (
         <MainContainer>
             <article>
@@ -114,6 +129,8 @@ export function Checkout(){
                                         content={coffee.content!}
                                         quantity={coffee.quantity}
                                         handleDeleteCoffee={handleDeleteCoffee}
+                                        handleImplementsCoffee={handleImplementsCoffee}
+                                        handleDescrementsCoffee={handleDescrementsCoffee}
                                     />
                                 ))
                         }
