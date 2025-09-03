@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState, type ReactNode } from "react";
+import { createContext, useEffect, useState, type Dispatch, type ReactNode, type SetStateAction } from "react";
 import mockData from '../data/mockData.json';
 
 //Itens do carrinho
@@ -9,6 +9,7 @@ type CartItem = {
 
 type CardContextType = {
     Cart: CartItem[];
+    setCart: Dispatch<SetStateAction<CartItem[]>>; //Declarando o tipo de Set para o TS, Podendo passar uma função ou um objeto
     addToCart: (id: number, quantity: number) => void;
 }
 
@@ -30,7 +31,7 @@ export function CartProvider({children}: DataContextProviderProps){
         })
     }
     return(
-        <CartContext.Provider value={{Cart: cart, addToCart}}>
+        <CartContext.Provider value={{Cart: cart, setCart, addToCart}}>
             {children}
         </CartContext.Provider>
     );

@@ -9,7 +9,6 @@ type Content = {
     valor: number;
 }
 
-
 type CardSelection = {
     id: number;
     content: Content;
@@ -19,7 +18,7 @@ type CardSelection = {
 
 export function CardCoffeeSelection({id, quantity, content, handleDeleteCoffee}: CardSelection){
 
-    const deleteCoffee = () => {
+    function deleteCoffee() {
         handleDeleteCoffee(id);
     }
 

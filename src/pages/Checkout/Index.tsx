@@ -7,10 +7,9 @@ import { CartContext, CoffesContext } from "../../context/CoffeesContext.tsx";
 
 export function Checkout(){
 
-    const {Cart} = useContext(CartContext);
+    const {Cart, setCart} = useContext(CartContext);
     const Coffee = useContext(CoffesContext);
-
-
+    
     const cartWithDetails = Cart.map((item) => {
         const coffee = Coffee?.find((c) => c.id === item.id);
         return{
@@ -18,14 +17,21 @@ export function Checkout(){
             quantity: item.quantity,
         };
     });
+    
+    
 
     let allItens = 0;
-    cartWithDetails.forEach((Coffee) => {
+    allPriceBuy()
+    function allPriceBuy(){
+        cartWithDetails.forEach((Coffee) => {
         allItens += (Coffee.content?.valor || 0) * Coffee.quantity
     });
+    }
+    
 
-    function handleDeleteCoffee(id){
-        Cart.filter(Coffee => Coffee.id !== id)
+    function handleDeleteCoffee(id: number){
+        setCart((prevCart) => prevCart.filter(coffee => coffee.id !== id))
+        allPriceBuy()
     }
 
     return (
