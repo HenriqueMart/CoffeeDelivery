@@ -1,12 +1,50 @@
 import { Bank, CreditCard, CurrencyDollar, MapPinLine, Money} from "phosphor-react";
 import { AddressBox, AllSelectPrice, AsideCofferAll, BaseBoxTitle, CardPay, Form, MainContainer, PaymentType} from "./Styled.ts";
 import { CardCoffeeSelection } from "./Components/CardCoffeSelect/Index.tsx";
-import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext, CoffesContext } from "../../context/CoffeesContext.tsx";
+import {useForm} from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useNavigate } from "react-router-dom";
+import { isValid } from "zod/v3";
+
+/* Zod */
+const schema = z.object({
+    CEP: z.coerce.number()
+    .min(10000000, "O CEP deve ter 8 Dígito!") //Coerce -> Converter aquela informação para o type que foi declarado na frente, como CEP foi número
+    .max(99999999, "CEP deve ter no máximo 8 dígito!"),
+    Rua: z.coerce.string()
+    .min(1, "Digite seu endereço para entrega!"),
+    Numero: z.coerce.number().min(0, "Digite um número Válido, Caso seu número tenha letra informe no campo 'Complemento'")
+    .max(1000, "Digite Número da Casa Menor que 1000!"),
+    Complemento: z.coerce.string(),
+    Bairro: z.coerce.string(),
+    Cidade: z.coerce.string(),
+    UF: z.coerce.string()
+    .min(2, "Digita A sigla da seu Estado! Exemplo: Bahia - BA, São Paulo - SP!")
+    .max(2, "Digita A sigla da seu Estado! Exemplo: Bahia - BA, São Paulo - SP!")
+});
+
 
 export function Checkout(){
 
+    //Navegação
+    const navigate = useNavigate();
+
+    //Hook Form
+    const {register, handleSubmit, formState: {errors, isValid}} = useForm({
+        resolver: zodResolver(schema),
+        mode: "onChange",
+    });
+
+    
+    const onSubmitNewOrder = (data:any) => {
+        console.log(data);
+        navigate("/Confirm");
+    }
+
+    /* Contexto Cart(Carrinho) e Coffee(Café)*/
     const {Cart, setCart} = useContext(CartContext);
     const Coffee = useContext(CoffesContext);
     
@@ -16,9 +54,7 @@ export function Checkout(){
             ...coffee,
             quantity: item.quantity,
         };
-    });
-    
-    
+    });    
 
     let allItens = 0;
     allPriceBuy()
@@ -27,7 +63,6 @@ export function Checkout(){
         allItens += (Coffee.content?.valor || 0) * Coffee.quantity
     });
     }
-    
 
     function handleDeleteCoffee(id: number){
         setCart((prevCart) => prevCart.filter(coffee => coffee.id !== id))
@@ -43,7 +78,6 @@ export function Checkout(){
 
     function handleDescrementsCoffee(id: number){
         setCart((prevCart) => prevCart.map((item) =>
-            
                 item.id === id? (item.quantity > 1 ? {...item, quantity: item.quantity - 1}: item): item
         )
     )
@@ -64,22 +98,42 @@ export function Checkout(){
                        </div>
                        
                     </BaseBoxTitle>
-                    
-                    <Form action="#">
+                    <Form 
+                    id="formAddress"
+                    onSubmit={ handleSubmit(onSubmitNewOrder)}>
                         <label id="Cep">
-                            <input type="number" name="CEP" id="CEP" placeholder="CEP" required/>
+                            <input type="number" 
+                            {...register('CEP', 
+                                {
+                                    required:true, 
+                                }
+                                )
+                            }
+                            
+                            id="CEP" placeholder="CEP"/>
+                            {errors.CEP && <span>{errors.CEP.message}</span>}
+       
                         </label>
                         <label id="Rua">
-                            <input type="text" name="" id="Rua" placeholder="Rua" required/>
+                            <input type="text" {...register('Rua', {required:true})} 
+                               
+                                id="Rua" placeholder="Rua" 
+                            />
+                            {errors.Rua && <span>{errors.Rua.message}</span>}
                         </label>
                         <label id="Casa">
-                            <input type="number" name="Numero" id="numero" placeholder="Número" required/>
-                            <input type="text" id="Complemento" placeholder="Complemento" />
+                            <input type="number" {...register('Numero', {required: true})} id="numero" placeholder="Número" required/>
+                            {errors.Numero && <span>{errors.Numero.message}</span>}
+                            <input type="text" {...register('Complemento', {})} id="Complemento" placeholder="Complemento" />
+                            {errors.Complemento && <span>{errors.Complemento.message}</span>}
                         </label>
                         <label id="Endereco">
-                            <input type="text" id="Bairro" placeholder="Bairro" required/>
-                            <input type="text" id="cidade" placeholder="Cidade" required/>
-                            <input type="text" id="Unidade Federal" placeholder="UF" required/>
+                            <input type="text" {...register('Bairro', {required:true})} id="Bairro" placeholder="Bairro" required/>
+                            {errors.Bairro && <span>{errors.Bairro.message}</span>}
+                            <input type="text" {...register('Cidade', {required:true})} id="cidade" placeholder="Cidade" required/>
+                            {errors.Cidade && <span>{errors.Cidade.message}</span>}
+                            <input type="text" {...register('UF', {required:true})} id="Unidade Federal" placeholder="UF" required/>
+                            {errors.UF && <span>{errors.UF.message}</span>}
                         </label>
                     </Form>
                 </AddressBox>
@@ -151,21 +205,15 @@ export function Checkout(){
                                 <h2><span>R$</span>{(allItens + 3).toFixed(2)}</h2>
                             </div>
                             <div>
-                                <NavLink to="/Confirm">
-                                    <button>
+                                    <button 
+                                        type="submit" 
+                                        form="formAddress"
+                                        disabled={!isValid}>
                                             Confirmar Compra
                                     </button>
-                                </NavLink>
-                                
                             </div>
-                            
-                            
-                            
-      
-                            
                         </AllSelectPrice>
                     </AsideCofferAll>
-                    
                 </article>
             </aside>
         </MainContainer>
