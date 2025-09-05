@@ -127,7 +127,7 @@ export const CardPay = styled.div`
     display: flex;
     gap: 10px;
     animation: 0.5s;
-    button{
+    label{
         background-color: ${props => props.theme.base_input};
         border-radius: 10px;
         border: 1px solid ${props => props.theme.base_hover};
@@ -179,8 +179,8 @@ export const AllSelectPrice = styled.div`
         }
     }
     :last-child{
-        a{
-            width: 100%;
+
+            
             button{
                 background-color: ${props => props.theme.yellow};
                 width: 100%;
@@ -198,7 +198,6 @@ export const AllSelectPrice = styled.div`
                 background-color: ${props => props.theme.yellow_dark};
             }
         }
-    }
 
 `
 

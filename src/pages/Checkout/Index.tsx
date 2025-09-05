@@ -1,13 +1,12 @@
-import { Bank, CreditCard, CurrencyDollar, MapPinLine, Money} from "phosphor-react";
+import { Bank, CreditCard, CurrencyDollar, MapPinLine, Money, CurrencyCircleDollar  } from "phosphor-react";
 import { AddressBox, AllSelectPrice, AsideCofferAll, BaseBoxTitle, CardPay, Form, MainContainer, PaymentType} from "./Styled.ts";
 import { CardCoffeeSelection } from "./Components/CardCoffeSelect/Index.tsx";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext, CoffesContext } from "../../context/CoffeesContext.tsx";
-import {useForm} from "react-hook-form";
+import {Controller, useForm} from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useNavigate } from "react-router-dom";
-import { isValid } from "zod/v3";
 
 /* Zod */
 const schema = z.object({
@@ -23,7 +22,8 @@ const schema = z.object({
     Cidade: z.coerce.string(),
     UF: z.coerce.string()
     .min(2, "Digita A sigla da seu Estado! Exemplo: Bahia - BA, São Paulo - SP!")
-    .max(2, "Digita A sigla da seu Estado! Exemplo: Bahia - BA, São Paulo - SP!")
+    .max(2, "Digita A sigla da seu Estado! Exemplo: Bahia - BA, São Paulo - SP!"),
+    paymentMethod: z.coerce.string(),
 });
 
 
@@ -33,13 +33,20 @@ export function Checkout(){
     const navigate = useNavigate();
 
     //Hook Form
-    const {register, handleSubmit, formState: {errors, isValid}} = useForm({
+    const {register, handleSubmit, control, watch,formState: {errors}} = useForm({
         resolver: zodResolver(schema),
         mode: "onChange",
     });
-
+    
+    const selectedPayment = watch("paymentMethod");
+    const [paymentError, setPaymentError] = useState("");
     
     const onSubmitNewOrder = (data:any) => {
+        if(!selectedPayment){
+            setPaymentError("Escolha uma forma de pagamento!");
+            return;
+        }
+        setPaymentError("");
         console.log(data);
         navigate("/Confirm");
     }
@@ -122,17 +129,17 @@ export function Checkout(){
                             {errors.Rua && <span>{errors.Rua.message}</span>}
                         </label>
                         <label id="Casa">
-                            <input type="number" {...register('Numero', {required: true})} id="numero" placeholder="Número" required/>
+                            <input type="number" {...register('Numero', {required: true})} id="numero" placeholder="Número"/>
                             {errors.Numero && <span>{errors.Numero.message}</span>}
                             <input type="text" {...register('Complemento', {})} id="Complemento" placeholder="Complemento" />
                             {errors.Complemento && <span>{errors.Complemento.message}</span>}
                         </label>
                         <label id="Endereco">
-                            <input type="text" {...register('Bairro', {required:true})} id="Bairro" placeholder="Bairro" required/>
+                            <input type="text" {...register('Bairro', {required:true})} id="Bairro" placeholder="Bairro"/>
                             {errors.Bairro && <span>{errors.Bairro.message}</span>}
-                            <input type="text" {...register('Cidade', {required:true})} id="cidade" placeholder="Cidade" required/>
+                            <input type="text" {...register('Cidade', {required:true})} id="cidade" placeholder="Cidade"/>
                             {errors.Cidade && <span>{errors.Cidade.message}</span>}
-                            <input type="text" {...register('UF', {required:true})} id="Unidade Federal" placeholder="UF" required/>
+                            <input type="text" {...register('UF', {required:true})} id="Unidade Federal" placeholder="UF"/>
                             {errors.UF && <span>{errors.UF.message}</span>}
                         </label>
                     </Form>
@@ -149,24 +156,60 @@ export function Checkout(){
                         </div>
                     </BaseBoxTitle>
                     <CardPay>
-                            <button>
-                                <span>
-                                    <CreditCard size={20} />
-                                </span>
-                                <p>Cartão de Crédito</p>
-                            </button>
-                            <button>
-                                <span>
-                                    <Bank size={20} />
-                                </span>
-                                <p>Cartão de Débito</p>
-                            </button>
-                            <button>
-                                <span>
-                                    <Money size={20} />
-                                </span>
-                                <p>Dinheiro</p>
-                            </button>
+                        <Controller
+                            name="paymentMethod"
+                            control={control}
+                            rules={{ required: "Escolha uma forma de pagamento!" }}
+                            render={({ field }) => (
+                                <CardPay>
+                                <label>
+                                    <input
+                                    type="radio"
+                                    value="credito"
+                                    checked={field.value === "credito"}
+                                    onChange={() => field.onChange("credito")}
+                                    />
+                                    <span><CreditCard size={20} /></span>
+                                    <p>Cartão de Crédito</p>
+                                </label>
+
+                                <label>
+                                    <input
+                                    type="radio"
+                                    value="debito"
+                                    checked={field.value === "debito"}
+                                    onChange={() => field.onChange("debito")}
+                                    />
+                                    <span><Bank size={20} /></span>
+                                    <p>Cartão de Débito</p>
+                                </label>
+
+                                <label>
+                                    <input
+                                    type="radio"
+                                    value="dinheiro"
+                                    checked={field.value === "dinheiro"}
+                                    onChange={() => field.onChange("dinheiro")}
+                                    />
+                                    <span><Money size={20} /></span>
+                                    <p>Dinheiro</p>
+                                </label>
+                                <label>
+                                    <input
+                                    type="radio"
+                                    value="Pix"
+                                    checked={field.value === "Pix"}
+                                    onChange={() => field.onChange("Pix")}
+                                    />
+                                    <span><CurrencyCircleDollar size={20} /></span>
+                                    <p>Pix</p>
+                                </label>
+
+                                {paymentError && <span>{paymentError}</span>}
+                            </CardPay>
+                            )}
+                            />
+                            
                     </CardPay>
                 </PaymentType>
             </article>
@@ -208,7 +251,7 @@ export function Checkout(){
                                     <button 
                                         type="submit" 
                                         form="formAddress"
-                                        disabled={!isValid}>
+                                        >
                                             Confirmar Compra
                                     </button>
                             </div>
