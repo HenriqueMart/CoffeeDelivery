@@ -1,10 +1,22 @@
+
 import styled from "styled-components";
 
+
+const STATUS_COLOR = {
+    purple: 'purple',
+    yellow: 'yellow',
+    orange: 'yellow_dark',
+} as const
+
+interface StatusProps {
+    statusColor: keyof typeof STATUS_COLOR;
+}
 
 export const MainContainer = styled.main`
     display: flex;
     width: 100%;
     justify-content: space-between;
+
     article{
         display: flex;
         width: 50%;
@@ -53,8 +65,8 @@ export const InformatioAddress = styled.main`
                 font-weight: 400;
             }
             span{
-                
-                font-weight: bold;
+                color: ${props => props.theme.base_text};
+                font-weight: 700;
             }
         }
         
@@ -66,11 +78,11 @@ export const InformatioAddress = styled.main`
 export const Ico = styled.div`
     padding: 0 10px ;
     margin-right: 10px;
-    border: 1px solid black;
+    border: 1px solid transparent;
     border-radius: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: ${props => props.theme.base_title};
+    background-color: ${props => props.theme[STATUS_COLOR[props.statusColor]]};
     color: white;
 `

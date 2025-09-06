@@ -1,9 +1,18 @@
 import { CurrencyDollar, MapPin, Timer } from "phosphor-react";
 import transitionImagen from "../../assets/ConfirmPage/Illustration.svg"
 import { Ico, InformatioAddress, MainContainer, TitleConfirm } from "./style";
+import { useLocation } from "react-router-dom";
 
 export function Confirm(){
-
+    const location = useLocation();
+    const data = location.state as {
+        Rua: string;
+        Numero: number;
+        Bairro: string;
+        Cidade: string;
+        UF: string;
+        paymentMethod: string
+    };
 
     return (
         <>
@@ -14,17 +23,17 @@ export function Confirm(){
                         <p>Agora é só aguardar que logo o café chegará até você</p>
                     </TitleConfirm>
                     <InformatioAddress>
-                        <div>
-                            <Ico>
+                            <div>
+                            <Ico statusColor="purple">
                                 <MapPin size={15} weight="fill" />
                             </Ico>
                             <div>
-                                <p>Entrega em <span>Rua João Martinelli, 102</span></p>
-                                <p>Ferrapos - Porto Alegre, RS</p>
+                                <p>Entrega em Rua <span>{data.Rua}</span></p>
+                                <p><span>{data.Bairro} - {data.Cidade}, {data.UF}</span></p>
                             </div>
                         </div>
                         <div>
-                            <Ico>
+                            <Ico statusColor="yellow">
                                 <Timer size={15} weight="fill" />
                             </Ico>
                             <div>
@@ -33,12 +42,12 @@ export function Confirm(){
                             </div>
                         </div>
                         <div>
-                            <Ico>
+                            <Ico statusColor="orange">
                                 <CurrencyDollar size={15} />
                             </Ico>
                             <div>
                                 <p>Pagamento na entrega</p>
-                                <p><span>Cartão de Crédito</span></p>
+                                <p><span>{data.paymentMethod}</span></p>
                             </div>
                         </div>
                     </InformatioAddress>

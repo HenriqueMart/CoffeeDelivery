@@ -128,6 +128,9 @@ export const CardPay = styled.div`
     gap: 10px;
     animation: 0.5s;
     label{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background-color: ${props => props.theme.base_input};
         border-radius: 10px;
         border: 1px solid ${props => props.theme.base_hover};
@@ -137,8 +140,12 @@ export const CardPay = styled.div`
         gap: 10px;
         height: 50px;
         width: 33%;
+        input{
+            appearance: none;
+        }
         
         p{
+            
             color: ${props => props.theme.base_subtitle};
             text-transform: uppercase;
             font-size: 0.7rem;
@@ -146,7 +153,12 @@ export const CardPay = styled.div`
         }
     }
     :hover{
-                background-color: ${props => props.theme.base_hover};
+                background-color: ${(props) => props.theme.purple_light};
+    }
+
+    label:has(input:checked) {
+        background-color: ${(props) => props.theme.purple_light};
+        border: 1px solid ${(props) => props.theme.purple};
     }
 
 `
@@ -200,4 +212,17 @@ export const AllSelectPrice = styled.div`
         }
 
 `
+
+export const MessagemError = styled.div`
+    display: flex;
+    flex-direction: column;
+    span{
+        font-size: 0.75rem;
+        color: red;
+        opacity: 75%;
+    }
+
+` 
+
+
 
