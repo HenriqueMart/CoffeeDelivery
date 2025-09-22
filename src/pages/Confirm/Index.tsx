@@ -24,9 +24,9 @@ export function Confirm(){
                     </TitleConfirm>
                     <InformatioAddress>
                             <div>
-                            <Ico statusColor="purple">
+                                <Ico statusColor="purple">
                                 <MapPin size={15} weight="fill" />
-                            </Ico>
+                                </Ico>
                             <div>
                                 <p>Entrega em Rua <span>{data.Rua}</span></p>
                                 <p><span>{data.Bairro} - {data.Cidade}, {data.UF}</span></p>

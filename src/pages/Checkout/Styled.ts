@@ -33,6 +33,14 @@ export const MainContainer = styled.main`
             width: 100%;  
         }
     }
+
+    @media(max-width: 900px){
+        flex-direction: column-reverse;
+        aside{
+            max-width: 100%;
+        }
+    }
+    
 `
 
 export const BaseLabel = styled.div`
@@ -97,15 +105,11 @@ export const Form = styled.form`
             background-color: ${props => props.theme.base_input};
             padding: 10px;
         }
-        input[id= 'Rua']{
-            width: 100%;
-        }
+     
         input[id= 'Unidade Federal']{
-            max-width: 8%;
+            max-width: 50px;
         }
-        input[id= 'Bairro']{
-            max-width: 60%;
-        }
+       
         ::placeholder{
             font-size: 0.7rem;
             font-weight: 400;
@@ -134,7 +138,6 @@ export const CardPay = styled.div`
         background-color: ${props => props.theme.base_input};
         border-radius: 10px;
         border: 1px solid ${props => props.theme.base_hover};
-        display: flex;
         align-items: center;
         justify-content: center;
         gap: 10px;
@@ -159,6 +162,16 @@ export const CardPay = styled.div`
     label:has(input:checked) {
         background-color: ${(props) => props.theme.purple_light};
         border: 1px solid ${(props) => props.theme.purple};
+    }
+
+    @media(max-width: 1100px){
+        display: flex;
+        flex-direction: column;
+        
+        label{
+            width: 100%;
+        }
+    
     }
 
 `

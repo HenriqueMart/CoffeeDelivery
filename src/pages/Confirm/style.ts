@@ -30,6 +30,33 @@ export const MainContainer = styled.main`
         align-items: end;
         justify-content: center;
     }
+    @media(max-width: 1000px){
+        article{
+            width: 90%;
+        }
+        figure{
+            height: 100%;
+            display: flex;
+            align-items: end;
+            justify-content: center;
+            img{
+                width: 100%;
+            }
+        }
+    }
+    @media(max-width: 700px){
+        flex-direction: column-reverse;
+        article{
+            width: 100%;
+        }
+        aside{
+            figure{
+                img{
+                    width: 90%;
+                }
+            }
+        }
+    }
 
 `
 
@@ -44,9 +71,16 @@ export const TitleConfirm = styled.div`
         width: 400;
         
     }
+    @media(max-width: 1200px){
+        
+            text-align: center;
+     
+       
+    }
 `
 
 export const InformatioAddress = styled.main`
+
     padding: 30px;
     border: 1px solid ${props => props.theme.purple};
     border-radius: 0 25px;
@@ -57,8 +91,10 @@ export const InformatioAddress = styled.main`
         display: flex;
         
         div{
+            
             display: flex;
             flex-direction: column;
+           justify-content: center;
             p{
                 font-size: 1rem;
                 color: ${props => props.theme.base_title};
@@ -68,14 +104,21 @@ export const InformatioAddress = styled.main`
                 color: ${props => props.theme.base_text};
                 font-weight: 700;
             }
+            @media(max-width: 500px){
+                p{
+                    font-size: 0.875rem;
+                }
+            }
         }
         
     }
 
-
+    
 `
 
 export const Ico = styled.div`
+    width: 50px;
+    height: 50px;
     padding: 0 10px ;
     margin-right: 10px;
     border: 1px solid transparent;

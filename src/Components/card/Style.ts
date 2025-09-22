@@ -17,6 +17,13 @@ export const Header = styled.header`
             width: 50%;
         }
     }
+    @media(max-width: 540px){
+        figure{
+            img{
+                width: 30%;
+            }
+        }
+    }
 `
 
 export const CoffeeDescription = styled.div`

@@ -191,5 +191,10 @@ export const CardsWrapper = styled.div`
     width: 100%;
     gap: 2rem;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+    @media(max-width: 665px){
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
 `
 

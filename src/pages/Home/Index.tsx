@@ -10,8 +10,6 @@ export function Home(){
 
     if (!dados) return <p>Carregando...</p>
     
-    
-
     return(
     <>
         <Main>
