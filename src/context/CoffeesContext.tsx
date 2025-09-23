@@ -22,9 +22,11 @@ export function CartProvider({children}: DataContextProviderProps){
         setCart((prevCart) => {
             const itemIndex = prevCart.findIndex(item => item.id === id);
             if(itemIndex >= 0){
-                const updateCart = [...prevCart];
-                updateCart[itemIndex].quantity = quantity;
-                return updateCart;
+            
+                return prevCart.map((item, index) => 
+                    index === itemIndex 
+                    ? {...item, quantity: item.quantity + quantity} : item
+                );
             }else{
                 return [...prevCart, {id, quantity}];
             }

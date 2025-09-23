@@ -58,9 +58,11 @@ export function Checkout(){
     const cartWithDetails = Cart.map((item) => {
         const coffee = Coffee?.find((c) => c.id === item.id);
         return{
+            
             ...coffee,
             quantity: item.quantity,
         };
+
     });    
 
     let coffeeInCart = cartWithDetails.length !== 0;
