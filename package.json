@@ -6,11 +6,11 @@
   "homepage": "http://henriquemart.github.io/CoffeeDelivery",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite Dist",
+    "build": "tsc -b && vite Build",
     "preview": "vite preview",
     "lint": "eslint . --ext .ts,.tsx",
     "predeploy": "npm run build", 
-    "deploy": "gh-pages -d build" 
+    "deploy": "gh-pages -d dist" 
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.1",
