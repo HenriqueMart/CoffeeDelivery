@@ -5,9 +5,6 @@ import { NavLink } from "react-router-dom";
 
 
 export function Header(){
-    function handleBuy(){
-
-    }
 
     return(
         <HeaderStyle>
