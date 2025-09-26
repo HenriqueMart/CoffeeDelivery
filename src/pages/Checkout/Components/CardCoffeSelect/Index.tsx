@@ -20,6 +20,7 @@ type CardSelection = {
 
 export function CardCoffeeSelection({id, quantity, content, handleDeleteCoffee, handleImplementsCoffee, handleDescrementsCoffee}: CardSelection){
     
+    const allContentValor = content.valor * quantity;
 
     return(   
              <CardSelect key={id}>
@@ -29,7 +30,7 @@ export function CardCoffeeSelection({id, quantity, content, handleDeleteCoffee, 
                 <InformationCard>
                         <NamePrice>
                             <p>{content.title}</p>
-                            <h3>R$<span>{content.valor.toFixed(2)}</span></h3>
+                            <h3>R$<span>{allContentValor.toFixed(2)}</span></h3>
                         </NamePrice>
                         <ActionCardSelection>
                             <div>

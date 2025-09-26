@@ -29,7 +29,6 @@ export function Card({id, content}: CardProps){
     const handleAddToCart = () => {
         addToCart(id, quantity);
         console.log(addToCart);
-        //console.log("Produto adicionado ao carrinho:", {id, quantity})
     }
     
     function handleLessUnity(){
@@ -79,7 +78,10 @@ export function Card({id, content}: CardProps){
                             <Plus onClick={handleMoreUnity} size={12} />
                         </BuyUnidade>
                         <AddCard>
-                            <ShoppingCart onClick={handleAddToCart}  size={20} weight="fill"/>
+                            <div>
+                                <ShoppingCart onClick={handleAddToCart}  size={20} weight="fill"/>
+                            </div>
+                            
                         </AddCard>
                     </div>      
                 </Footer>

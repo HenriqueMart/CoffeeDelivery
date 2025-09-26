@@ -124,9 +124,17 @@ export const BuyUnidade = styled.div`
 `
 
 export const AddCard = styled.div`
-    cursor: pointer;
-    padding: 5px;
-    background-color: ${props => props.theme.purple_dark};
-    color: ${props => props.theme.while};
+    
+    div{
+        cursor: pointer;
+        padding: 5px;
+        background-color: ${props => props.theme.purple_dark};
+        color: ${props => props.theme.while};
+        
+    }
+    :hover{
+        background-color: ${props => props.theme.purple};
+        transition: 0.4s;
+    }
 
 `
