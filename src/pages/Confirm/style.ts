@@ -8,8 +8,10 @@ const STATUS_COLOR = {
     orange: 'yellow_dark',
 } as const
 
-interface StatusProps {
-    statusColor: keyof typeof STATUS_COLOR;
+type StatusColor = keyof typeof STATUS_COLOR; //Typeof Pega o tipo do objeto Keyof a chave do objeto para se expandir. Gerando conjuntos de valores válido na props
+
+interface IcoProps { //Identificação da Props
+    statusColor: StatusColor;
 }
 
 export const MainContainer = styled.main`
@@ -116,7 +118,7 @@ export const InformatioAddress = styled.main`
     
 `
 
-export const Ico = styled.div`
+export const Ico = styled.div<IcoProps>` //Esse components recebe props
     width: 50px;
     height: 50px;
     padding: 0 10px ;

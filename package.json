@@ -3,11 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "http://henriquemart.github.io/CoffeeDelivery",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite Dist",
     "preview": "vite preview",
-    "lint": "eslint . --ext .ts,.tsx"
+    "lint": "eslint . --ext .ts,.tsx",
+    "predeploy": "npm run build", 
+    "deploy": "gh-pages -d build" 
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.1",
