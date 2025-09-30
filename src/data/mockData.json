@@ -2,7 +2,7 @@
   {
     "id": 1,
     "content": {
-      "photo": "/photoCardCoffees/ExpressoTradicional.svg",
+      "photo": "photoCardCoffees/ExpressoTradicional.svg",
       "title": "Expresso Tradicional",
       "tag": ["TRADICIONAL"],
       "subtitle": "O tradicional café feito com água quente e grãos moídos",
@@ -12,7 +12,7 @@
   {
     "id": 2,
     "content": {
-      "photo": "/photoCardCoffees/ExpressoCremoso.svg",
+      "photo": "photoCardCoffees/ExpressoCremoso.svg",
       "title": "Expresso Cremoso",
       "tag": ["TRADICIONAL"],
       "subtitle": "Café expresso tradicional com espuma cremosa",
@@ -22,7 +22,7 @@
   {
     "id": 3,
     "content": {
-      "photo": "/photoCardCoffees/ExpressoGelado.svg",
+      "photo": "photoCardCoffees/ExpressoGelado.svg",
       "title": "Expresso Gelado",
       "tag": ["TRADICIONAL", "GELADO"],
       "subtitle": "Bebida preparada com café expresso e cubos de gelo",
@@ -32,7 +32,7 @@
   {
     "id": 4,
     "content": {
-      "photo": "/photoCardCoffees/CafeComLeite.svg",
+      "photo": "photoCardCoffees/CafeComLeite.svg",
       "title": "Café com Leite",
       "tag": ["TRADICIONAL", "COM LEITE"],
       "subtitle": "Meio a meio de expresso tradicional com leite vaporizado",
@@ -42,7 +42,7 @@
   {
     "id": 5,
     "content": {
-      "photo": "/photoCardCoffees/Latte.svg",
+      "photo": "photoCardCoffees/Latte.svg",
       "title": "Latte",
       "tag": ["TRADICIONAL", "COM LEITE"],
       "subtitle": "Uma dose de café expresso com o dobro de leite e espuma cremosa",
@@ -52,7 +52,7 @@
   {
     "id": 6,
     "content": {
-      "photo": "/photoCardCoffees/Capuccino.svg",
+      "photo": "photoCardCoffees/Capuccino.svg",
       "title": "Capuccino",
       "tag": ["TRADICIONAL", "COM LEITE"],
       "subtitle": "Bebida com canela feita de doses iguais de café, leite e espuma",
@@ -62,7 +62,7 @@
   {
     "id": 7,
     "content": {
-      "photo": "/photoCardCoffees/Macchiato.svg",
+      "photo": "photoCardCoffees/Macchiato.svg",
       "title": "Macchiato",
       "tag": ["TRADICIONAL", "COM LEITE"],
       "subtitle": "Café expresso misturado com um pouco de leite e espuma",
@@ -72,7 +72,7 @@
   {
     "id": 8,
     "content": {
-      "photo": "/photoCardCoffees/Mocaccino.svg",
+      "photo": "photoCardCoffees/Mocaccino.svg",
       "title": "Mocaccino",
       "tag": ["TRADICIONAL", "COM LEITE"],
       "subtitle": "Café expresso com calda de chocolate, pouco leite e espuma",
@@ -82,7 +82,7 @@
   {
     "id": 9,
     "content": {
-      "photo": "/photoCardCoffees/ChocolateQuente.svg",
+      "photo": "photoCardCoffees/ChocolateQuente.svg",
       "title": "Chocolate Quente",
       "tag": ["ESPECIAL", "COM LEITE"],
       "subtitle": "Bebida feita com chocolate dissolvido no leite quente e café",
@@ -92,7 +92,7 @@
   {
     "id": 10,
     "content": {
-      "photo": "/photoCardCoffees/Cubano.svg",
+      "photo": "photoCardCoffees/Cubano.svg",
       "title": "Cubano",
       "tag": ["ESPECIAL", "ALCOÓLICO", "GELADO"],
       "subtitle": "Drink gelado de café expresso com rum, creme de leite e hortelã",
@@ -102,7 +102,7 @@
   {
     "id": 11,
     "content": {
-      "photo": "/photoCardCoffees/Havaiano.svg",
+      "photo": "photoCardCoffees/Havaiano.svg",
       "title": "Havaiano",
       "tag": ["ESPECIAL"],
       "subtitle": "Bebida adocicada preparada com café e leite de coco",
@@ -112,7 +112,7 @@
   {
     "id": 12,
     "content": {
-      "photo": "/photoCardCoffees/Arabe.svg",
+      "photo": "photoCardCoffees/Arabe.svg",
       "title": "Árabe",
       "tag": ["ESPECIAL"],
       "subtitle": "Bebida preparada com grãos de café árabe e especiarias",
@@ -122,7 +122,7 @@
   {
     "id": 13,
     "content": {
-      "photo": "/photoCardCoffees/Irlandes.svg",
+      "photo": "photoCardCoffees/Irlandes.svg",
       "title": "Irlandês",
       "tag": ["ESPECIAL", "ALCOÓLICO"],
       "subtitle": "Bebida a base de café, uísque irlandês, açúcar e chantilly",
