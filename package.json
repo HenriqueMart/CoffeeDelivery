@@ -6,7 +6,7 @@
   "homepage": "http://henriquemart.github.io/CoffeeDelivery",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite Build",
+    "build": "tsc -b && vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext .ts,.tsx",
     "predeploy": "npm run build", 
