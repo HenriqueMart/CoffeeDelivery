@@ -17,7 +17,7 @@ function App() {
     <ThemeProvider theme={defaultTheme}>
       <DataProvider>
         <CartProvider>
-            <BrowserRouter basename="/projetcs">
+            <BrowserRouter basename="/CoffeeDelivery">
               <Router/>
             </BrowserRouter>
           <GlobalStyle/>
