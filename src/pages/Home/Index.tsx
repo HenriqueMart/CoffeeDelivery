@@ -21,12 +21,12 @@ export function Home(){
                     </Description>
                     <ProductDescription>
                     <div>
-                        <p><IconeDescrition statusColor="yellow_dark"><ShoppingCart size={16} weight='fill' color='white' /></IconeDescrition> Compra simples e segura</p>
-                        <p><IconeDescrition statusColor="yellow"><Timer size={16} weight='fill' color='white'/></IconeDescrition> Entrega rápido e rastreada</p>
+                        <p><IconeDescrition $statusColor="yellow_dark"><ShoppingCart size={16} weight='fill' color='white' /></IconeDescrition> Compra simples e segura</p>
+                        <p><IconeDescrition $statusColor="yellow"><Timer size={16} weight='fill' color='white'/></IconeDescrition> Entrega rápido e rastreada</p>
                     </div>
                     <div>
-                        <p><IconeDescrition statusColor="base_title"><Package size={16} weight='fill' color='white'/></IconeDescrition> Embalagem mantém o café intacto</p>
-                        <p><IconeDescrition statusColor="purple"><Coffee size={16} weight='fill' color='white'/></IconeDescrition> O café chega fresquinho até você</p>
+                        <p><IconeDescrition $statusColor="base_title"><Package size={16} weight='fill' color='white'/></IconeDescrition> Embalagem mantém o café intacto</p>
+                        <p><IconeDescrition $statusColor="purple"><Coffee size={16} weight='fill' color='white'/></IconeDescrition> O café chega fresquinho até você</p>
                     </div>
                     </ProductDescription>
                 </div>

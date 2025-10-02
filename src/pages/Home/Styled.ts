@@ -148,8 +148,10 @@ export const ProductDescription = styled.div`
 `
 
 interface IconeProps {
-    statusColor: 'yellow_dark'| 'yellow' | 'purple' | 'base_title';
+    $statusColor: 'yellow_dark'| 'yellow' | 'purple' | 'base_title';
 }
+
+
 
 export const IconeDescrition = styled.span<IconeProps>`
     display: inline-block;/*Centralizando os ícones*/
@@ -159,7 +161,7 @@ export const IconeDescrition = styled.span<IconeProps>`
     border-radius: 50%;
     padding: 5px;
 
-    background-color: ${props => props.theme[props.statusColor]};
+    background-color: ${({theme, $statusColor})=> theme[$statusColor]};
 
     @media(max-width: 768px){
         display: flex;

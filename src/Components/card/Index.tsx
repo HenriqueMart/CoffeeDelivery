@@ -51,7 +51,7 @@ export function Card({id, content}: CardProps){
                     </figure>
                     <TagDescrition> 
                             {content.tag.map((tag) => {
-                                return <p>{tag}</p>
+                                return <p key={tag}>{tag}</p>
                             })}
                     </TagDescrition>
                     <CoffeeDescription>

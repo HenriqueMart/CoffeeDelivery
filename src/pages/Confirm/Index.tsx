@@ -24,7 +24,7 @@ export function Confirm(){
                     </TitleConfirm>
                     <InformatioAddress>
                             <div>
-                                <Ico statusColor="purple">
+                                <Ico $statusColor="purple">
                                 <MapPin size={15} weight="fill" />
                                 </Ico>
                             <div>
@@ -33,7 +33,7 @@ export function Confirm(){
                             </div>
                         </div>
                         <div>
-                            <Ico statusColor="yellow">
+                            <Ico $statusColor="yellow">
                                 <Timer size={15} weight="fill" />
                             </Ico>
                             <div>
@@ -42,7 +42,7 @@ export function Confirm(){
                             </div>
                         </div>
                         <div>
-                            <Ico statusColor="orange">
+                            <Ico $statusColor="orange">
                                 <CurrencyDollar size={15} />
                             </Ico>
                             <div>
