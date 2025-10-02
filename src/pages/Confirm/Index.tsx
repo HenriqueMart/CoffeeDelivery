@@ -1,5 +1,5 @@
 import { CurrencyDollar, MapPin, Timer } from "phosphor-react";
-import transitionImagen from "../../assets/ConfirmPage/Illustration.svg"
+import transitionImagen from "../../assets/Illustration.svg"
 import { Ico, InformatioAddress, MainContainer, TitleConfirm } from "./style";
 import { useLocation } from "react-router-dom";
 
