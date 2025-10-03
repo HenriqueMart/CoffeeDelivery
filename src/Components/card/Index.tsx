@@ -47,7 +47,10 @@ export function Card({id, content}: CardProps){
             <div>
                 <Header>
                     <figure>
-                        <img src={`src/assets/${content.photo}`} alt="Imagens do Café"/>
+                        <img
+                        src={`${import.meta.env.BASE_URL}${content.photo}`}
+                        alt="Imagem do Café"
+                        />
                     </figure>
                     <TagDescrition> 
                             {content.tag.map((tag) => {
