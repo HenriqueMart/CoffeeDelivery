@@ -1,69 +1,101 @@
-# React + TypeScript + Vite
+# 📘 Coffe Delivery
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Esse projeto tem como Objetivo de um loja virtual de caffee personalizada. Permitindo a compra, o tratamento dos dados e simulação de recebimento de dados da API só que mockado. Permitindo selecionar a quantidade e visualiar o valor total de unidade, preço e meio de pagamento.
+> Simulando um loja virtual de compra online. Permitindo que o usuário visualiza de forma fácil e prático suas compras.
+---
 
-Currently, two official plugins are available:
+## 🚀 Tecnologias Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [TypeScript](https://www.typescriptlang.org/docs/)
+- [Styled Components](https://styled-components.com/) 
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📸 Demonstração
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+| Tela Inicial | Tela de Checkout | Tela de compra realizada |
+|--------------|-----------------|-----------------|
+| ![Home](/src/assets/readme/Home.png)![Home](/src/assets/readme/Home2.png)|![Checkout](/src/assets/readme/checkout.png) [Checkout](/src/assets/readme/checkout2.png) | [Cofffee Delivery](/src/assets/readme/finaly.png) 
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📂 Estrutura de Pastas
+
+```bash
+public/
+|── photoCardCoffees
+src/
+├── assets/
+├── components/
+├── context/
+├── data/
+├── layouts/
+├── pages/
+├── styles/
+├── App.tsx
+└── Router.tsx
+└── main.tsx
+```
+## ⚙️ Funcionalidades
+
+- ✅ Adicionar Coffee no Carrinho
+
+- ✅ Escolher a quantidade de Caffee tanto na página principal quando na página de Checkout
+
+- ✅ Possibilidade de adicionar mais quantidade pela home
+
+- ✅ Validação do formulário e do Método de pagamento
+
+# 🧠 Aprendizados
+
+- Uso de Hooks (useState, useEffect, useReducer)
+
+- Styled Components
+
+- Eslint
+
+- Routes
+
+- Biblioteca de Form (react-hook-form)
+
+- Biblioteca de Zod (react-hook-Zod)
+
+- Props Drilling (Contexto)
+
+
+# 🛠️ Como Rodar Localmente
+
+```bash
+
+# Clone o repositório
+git clone https://github.com/HenriqueMart/CoffeeDelivery
+
+# Acesse a pasta
+cd CoffeeDelivery
+
+# Instale as dependências
+npm install
+
+# Inicie o servidor de desenvolvimento
+npm run dev
+
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+# 🔗 Deploy
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+➡️ Clique aqui para acessar o código da aplicação [codigo](https://github.com/HenriqueMart/CoffeeDelivery)
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Ou:
+
+🟢 Veja visualmente o projeto [Site](https://henriquemart.github.io/CoffeeDelivery) 
+
+# 🤝 Contribuições
+Sinta-se à vontade para abrir issues e enviar pull requests.
+
+# 📄 Licença
+Este projeto está sob a licença MIT.
+
+# 👨‍💻 Autor
+Feito por Desenvolvedor Henrique Martins
