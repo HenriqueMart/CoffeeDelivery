@@ -15,17 +15,16 @@
 
 ## 📸 Demonstração
 
-|--------------|
 ### Tela Inicial  
-|--------------|
-| ![Home](/src/assets/readme/Home.png)![Home](/src/assets/readme/Home2.png)
-|--------------|
+
+![Home](/src/assets/readme/Home.png)![Home](/src/assets/readme/Home2.png)
+
 ### Tela de Checkout 
------------------|
+
 ![Checkout](/src/assets/readme/checkout.png) ![Checkout](/src/assets/readme/checkout2.png)
-|--------------|
+
 ### Tela de compra realizada
-|--------------|
+
 ![Cofffee Delivery](/src/assets/readme/finaly.png) 
 
 ---
