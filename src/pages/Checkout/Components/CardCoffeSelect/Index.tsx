@@ -25,7 +25,7 @@ export function CardCoffeeSelection({id, quantity, content, handleDeleteCoffee, 
     return(   
              <CardSelect key={id}>
                 <figure>
-                    <img src={`${import.meta.env.BASE_URL}${content.photo}`} alt="Imagens do Café"/>
+                    <img src={`src/assets/${content.photo}`} alt="Imagens do Café"/>
                 </figure>
                 <InformationCard>
                         <NamePrice>
