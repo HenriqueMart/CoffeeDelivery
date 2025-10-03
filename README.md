@@ -1,7 +1,7 @@
 # 📘 Coffe Delivery
 
-> Esse projeto tem como Objetivo de um loja virtual de caffee personalizada. Permitindo a compra, o tratamento dos dados e simulação de recebimento de dados da API só que mockado. Permitindo selecionar a quantidade e visualiar o valor total de unidade, preço e meio de pagamento.
-> Simulando um loja virtual de compra online. Permitindo que o usuário visualiza de forma fácil e prático suas compras.
+> Este projeto é uma loja virtual de café personalizada, desenvolvida para simular a experiência de compra online. Ele permite que os usuários: Selecionem a quantidade de produtos e visualizem o valor total da compra; Escolham o método de pagamento; Interajam com dados simulados de uma API (mocked), permitindo testar funcionalidades sem integração real; Tenham uma experiência de compra prática e intuitiva, com visualização clara de seus pedidos.
+> O objetivo do projeto é demonstrar funcionalidades essenciais de um e-commerce de forma simples e interativa, focando na experiência do usuário e na manipulação de dados.
 ---
 
 ## 🚀 Tecnologias Utilizadas
@@ -15,9 +15,15 @@
 
 ## 📸 Demonstração
 
-| Tela Inicial | Tela de Checkout | Tela de compra realizada |
-|--------------|-----------------|-----------------|
-| ![Home](/src/assets/readme/Home.png)![Home](/src/assets/readme/Home2.png)|![Checkout](/src/assets/readme/checkout.png) [Checkout](/src/assets/readme/checkout2.png) | [Cofffee Delivery](/src/assets/readme/finaly.png) 
+| Tela Inicial | 
+|--------------|-----------------|
+| ![Home](/src/assets/readme/Home.png)![Home](/src/assets/readme/Home2.png)|
+Tela de Checkout | 
+-----------------|
+![Checkout](/src/assets/readme/checkout.png) ![Checkout](/src/assets/readme/checkout2.png)
+Tela de compra realizada |
+-----------------|
+![Cofffee Delivery](/src/assets/readme/finaly.png) 
 
 ---
 
